@@ -56,7 +56,7 @@ This library enables Java applications to communicate with Z-Wave devices via a 
 > &nbsp;&nbsp;&nbsp;&nbsp;System.out.println("NAK");  
 > }  
 
-#### To close a Z-Wave device connection
+#### To disconnect from a Z-Wave device  
 > zwaveIPClient.close();  
 
 
