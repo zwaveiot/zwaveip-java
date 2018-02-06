@@ -5,15 +5,13 @@ This library enables Java applications to communicate with Z-Wave devices via a 
 
 #### Current status: beta  
 
-#### Too add the library to your project (pre-compiled post-beta on the "releases" page)  
-> Add zwaveip.jar as an "external JAR reference" to your project.  
-> Add the two supporting BouncyCastle JARs (as "external JAR references") to your project:  
-  1. bcprov-jdk15on-159.jar  
-  2. bctls-jdk15on-159.jar  
+#### To add the library to your project (pre-compiled post-beta on the "releases" page)  
+1. Add zwaveip.jar as an "external JAR" to your project.  
+2. Add the two supporting BouncyCastle JARs (as "external JARs") to your project: bcprov-jdk15on-159.jar and bctls-jdk15on-159.jar.  
 
 #### To import the library
-> import com.zwavepublic.zwaveip.*;  
-> import com.zwavepublic.zwaveip.command.*;  
+> import com.zwavepublic.zwaveip.\*;  
+> import com.zwavepublic.zwaveip.command.\*;  
 
 #### To convert the Z-Wave network's PSK (Pre-Shared Key) password from a hex string to the required binary representation
 > private static byte[] convertHexStringToBinaryPsk(String hexString) {  
@@ -38,15 +36,15 @@ This library enables Java applications to communicate with Z-Wave devices via a 
 
 #### To send a message to the connected Z-Wave device (example) and wait for an acknowledgement
 > zwaveIPClient.sendMessage(CommandClass.SwitchBinary, SwitchBinaryCommand.Set, new byte[] {0xFF});  
-NOTE: sendMessage throws both IOException (for newtwork errors) and ZWaveIPException (for Z-Wave timeouts/NAKs)
+// NOTE: sendMessage throws both IOException (for newtwork errors) and ZWaveIPException (for Z-Wave timeouts/NAKs)
 
 #### To request device status from the connected Z-Wave device (example)
-> try {
+> try {  
 > &nbsp;&nbsp;&nbsp;&nbsp;byte[] response = zwaveIPClient.sendMessageAndWaitForResponse(CommandClass.SwitchBinary, SwitchBinaryCommand.Get, new byte[] {}, SwitchBinaryCommand.Report);  
 > &nbsp;&nbsp;&nbsp;&nbsp;byte powerStateAsByte = response.data[0];  
 > &nbsp;&nbsp;&nbsp;&nbsp;boolean powerStateAsBoolean = (powerStateAsByte != 0);  
 > &nbsp;&nbsp;&nbsp;&nbsp;System.out.println("powerState: " + powerStateAsBoolean + " (" + powerStateAsByte + ")");  
-> } catch (IOException ex) {
+> } catch (IOException ex) {  
 > &nbsp;&nbsp;&nbsp;&nbsp;System.out.println("IOException (network error): " + ex.toString());  
 > } catch (AckTimeoutException ex) {  
 > &nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Timeout (no ACK)");  
@@ -62,4 +60,4 @@ NOTE: sendMessage throws both IOException (for newtwork errors) and ZWaveIPExcep
 
 #### Documentation on Z-Wave command classes and Z-Wave commands  
 ###### For full documentation, see: http://zwavepublic.com/downloads  
-###### For Java enumerations, see the 'commands' subdirectory within this package
+###### For Java enumerations, see the 'command' subdirectory within this package
