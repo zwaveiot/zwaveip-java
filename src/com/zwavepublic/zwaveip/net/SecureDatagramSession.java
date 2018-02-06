@@ -188,8 +188,8 @@ public class SecureDatagramSession implements PSKDtlsClient.RemoteSocketListener
 		DatagramTransport datagramTransport;
 		datagramTransport = new UDPTransport(datagramSocket, mtu);
 
-		// OPTIONAL: wrap our datagramTransport in a logging transport layer
-		datagramTransport = new com.zwavepublic.zwaveip.net.debug.LoggingDatagramTransport(datagramTransport, System.out);
+//		// OPTIONAL: wrap our datagramTransport in a logging transport layer
+//		datagramTransport = new com.zwavepublic.zwaveip.net.debug.LoggingDatagramTransport(datagramTransport, System.out);
 
 		return new EstablishDatagramTransportResult(datagramSocket, datagramTransport);
 	}

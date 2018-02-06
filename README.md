@@ -3,7 +3,7 @@ A Z-Wave IP implementation for Java. Unofficial library, not supported by Sigma 
 
 This library enables Java applications to communicate with Z-Wave devices via a Z/IP (Z-Wave IP) Gateway.
 
-#### Current status: beta  
+#### Current status: preview  
 
 #### To add the library to your project (from the "releases" page)  
 1. Add zwaveip.jar as an "external JAR" to your project.  
