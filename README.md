@@ -38,7 +38,7 @@ This library enables Java applications to communicate with Z-Wave devices via a 
 
 #### To send a message to the connected Z-Wave device (example) and wait for an acknowledgement
 > zwaveIPClient.sendMessage(CommandClass.SwitchBinary, SwitchBinaryCommand.Set, new byte[] {0xFF});  
-// NOTE: sendMessage throws both IOException (for newtwork errors) and ZWaveIPException (for Z-Wave timeouts/NAKs)
+/\* NOTE: sendMessage throws both IOException (for network errors) and ZWaveIPException (for Z-Wave timeouts/NAKs) \*/
 
 #### To request device status from the connected Z-Wave device (example)
 > try {  
