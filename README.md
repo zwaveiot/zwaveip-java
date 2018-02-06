@@ -5,9 +5,11 @@ This library enables Java applications to communicate with Z-Wave devices via a 
 
 #### Current status: beta  
 
-#### To add the library to your project (pre-compiled post-beta on the "releases" page)  
+#### To add the library to your project (from the "releases" page)  
 1. Add zwaveip.jar as an "external JAR" to your project.  
-2. Add the two supporting BouncyCastle JARs (as "external JARs") to your project: bcprov-jdk15on-159.jar and bctls-jdk15on-159.jar.  
+2. Add the two supporting BouncyCastle JARs (as "external JARs") to your project: 
+   * bcprov-jdk15on-159.jar  
+   * bctls-jdk15on-159.jar  
 
 #### To import the library
 > import com.zwavepublic.zwaveip.\*;  
