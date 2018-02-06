@@ -37,12 +37,12 @@ This library enables Java applications to communicate with Z-Wave devices via a 
 > ZWaveIPClient zwaveIPClient = new ZWaveIPClient(address, pskIdentity, pskPassword);  
 
 #### To send a message to the connected Z-Wave device (example) and wait for an acknowledgement
-> zwaveIPClient.sendMessage(CommandClass.SwitchBinary, SwitchBinaryCommand.Set, new byte[] {0xFF});  
+> zwaveIPClient.sendMessage(CommandClass.SWITCH_BINARY, SwitchBinaryCommand.SET, new byte[] {0xFF});  
 /\* NOTE: sendMessage throws both IOException (for network errors) and ZWaveIPException (for Z-Wave timeouts/NAKs) \*/
 
 #### To request device status from the connected Z-Wave device (example)
 > try {  
-> &nbsp;&nbsp;&nbsp;&nbsp;byte[] response = zwaveIPClient.sendMessageAndWaitForResponse(CommandClass.SwitchBinary, SwitchBinaryCommand.Get, new byte[] {}, SwitchBinaryCommand.Report);  
+> &nbsp;&nbsp;&nbsp;&nbsp;byte[] response = zwaveIPClient.sendMessageAndWaitForResponse(CommandClass.SWITCH_BINARY, SwitchBinaryCommand.GET, new byte[] {}, SwitchBinaryCommand.REPORT);  
 > &nbsp;&nbsp;&nbsp;&nbsp;byte powerStateAsByte = response.data[0];  
 > &nbsp;&nbsp;&nbsp;&nbsp;boolean powerStateAsBoolean = (powerStateAsByte != 0);  
 > &nbsp;&nbsp;&nbsp;&nbsp;System.out.println("powerState: " + powerStateAsBoolean + " (" + powerStateAsByte + ")");  
