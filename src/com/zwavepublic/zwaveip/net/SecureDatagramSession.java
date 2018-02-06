@@ -145,6 +145,16 @@ public class SecureDatagramSession implements PSKDtlsClient.RemoteSocketListener
 		}
 	}
 
+	// getReceiveLimit() returns the maximum payload size for received datagrams (i.e. MTU - headers)
+	public int getReceiveLimit() throws IOException {
+		return this.dtlsTransport.getReceiveLimit();
+	}
+	
+	// getSendLimit() returns the maximum payload size for sent datagrams (i.e. MTU - headers)
+	public int getSendLimit() throws IOException {
+		return this.dtlsTransport.getSendLimit();
+	}
+	
     public void send(byte[] buffer) throws IOException
     {
     	send(buffer, 0, buffer.length);
